@@ -1,5 +1,3 @@
-[egg-monster-word-hunter.html](https://github.com/user-attachments/files/32809604/egg-monster-word-hunter.html)
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
