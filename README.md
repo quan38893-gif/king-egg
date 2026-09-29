@@ -1,3 +1,5 @@
+[egg-monster-word-hunter.html](https://github.com/user-attachments/files/32809604/egg-monster-word-hunter.html)
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -885,11 +887,481 @@ body.touch #controls{
 
 }
 
+
+/* =====================================================
+   BRIGHT THEME (OVERRIDE)
+===================================================== */
+
+html,body{
+    background:#8fd3ff;
+}
+
+#loginScreen{
+    background:
+        linear-gradient(
+            135deg,
+            #a1c4fd 0%,
+            #c2e9fb 45%,
+            #fbc2eb 100%
+        );
+}
+
+.loginBox{
+    background:rgba(255,255,255,.96);
+    border:3px solid #ff9ec4;
+    box-shadow:
+        0 14px 44px rgba(255,120,180,.35),
+        inset 0 0 0 4px rgba(255,255,255,.6);
+}
+
+.loginBox h1{
+    color:#ff5e9c;
+    text-shadow:
+        0 2px 0 #fff,
+        0 0 18px rgba(255,120,180,.55);
+}
+
+.loginBox p{
+    color:#4a5b72;
+}
+
+#profileScreen{
+    background:
+        linear-gradient(
+            135deg,
+            #fbc2eb,
+            #a6c1ee
+        );
+}
+
+.profileBox{
+    background:rgba(255,255,255,.96);
+    border:3px solid #ffc46b;
+    box-shadow:0 14px 44px rgba(255,180,80,.4);
+}
+
+.profileBox h2{
+    color:#ff8c42;
+}
+
+.profileBox p{
+    color:#4a5b72;
+}
+
+#playerName,#accUser,#accPass,#accUser2,#accPass2,#accName2{
+    background:#fff;
+    color:#22303f;
+    border:2px solid #7fd4ff;
+}
+
+#menu{
+    background:
+        linear-gradient(
+            135deg,
+            #84fab0 0%,
+            #8fd3f4 50%,
+            #a1c4fd 100%
+        );
+}
+
+.menuBox{
+    background:rgba(255,255,255,.96);
+    border:3px solid #59d0ff;
+    box-shadow:0 14px 44px rgba(60,180,255,.4);
+}
+
+.menuBox h1{
+    color:#22b8ff;
+    text-shadow:0 2px 0 #fff,0 0 18px rgba(40,180,255,.5);
+}
+
+.menuBox h2{
+    color:#ff8c42;
+}
+
+.menuBox p{
+    color:#43536b;
+}
+
+#languageSelect,#mapSelect{
+    background:#fff;
+    color:#22303f;
+    border:2px solid #7fd4ff;
+}
+
+.uiBox{
+    background:rgba(255,255,255,.9);
+    border:2px solid #59d0ff;
+    color:#1f3a52;
+    font-weight:bold;
+    box-shadow:0 4px 14px rgba(0,140,220,.25);
+}
+
+#score{ color:#ff7a00; }
+#level{ color:#0aa5e0; }
+
+#profileButton{
+    background:rgba(255,255,255,.92);
+    border:2px solid #ff9ec4;
+    color:#ff5e9c;
+    font-weight:bold;
+}
+
+#wordPanel{
+    background:rgba(255,255,255,.97);
+    border:3px solid #36ddff;
+    box-shadow:0 12px 34px rgba(0,180,255,.35);
+}
+
+#instruction{ color:#2f8fbf; }
+#nativeWord{ color:#ff8c42; }
+#wordDisplay{ color:#1f3a52; }
+
+#wordInput{
+    background:#fff;
+    color:#22303f;
+    border:2px solid #35dfff;
+}
+
+#leaderboard{ background:rgba(30,60,90,.55); }
+
+.leaderboardBox{
+    background:#fff;
+    border:3px solid #ffc46b;
+    box-shadow:0 16px 50px rgba(255,180,80,.45);
+}
+
+.leaderboardBox h2{ color:#ff8c42; }
+
+.rankRow{
+    background:linear-gradient(135deg,#e8f7ff,#fff0f6);
+    color:#22303f;
+    border:1px solid #cfe9ff;
+}
+
+.rank{ color:#ff7a00; }
+.rankScore{ color:#0aa5e0; }
+
+.closeButton{
+    background:linear-gradient(135deg,#74ebd5,#7fd4ff);
+    color:#0b3d55;
+    font-weight:bold;
+}
+
+#gameover{ background:rgba(60,20,40,.55); }
+
+.gameoverBox{
+    background:#fff;
+    border:3px solid #ff7a92;
+    box-shadow:0 16px 50px rgba(255,90,120,.45);
+}
+
+.gameoverText{
+    color:#ff4d6d;
+    text-shadow:0 2px 0 #fff,0 0 24px rgba(255,80,110,.5);
+}
+
+.gameoverSub{ color:#5a4048; }
+#gameoverScore{ color:#ff7a00; }
+
+#controls{
+    background:rgba(255,255,255,.85);
+    color:#2f6f8f;
+    border:1px solid #9fe0ff;
+}
+
+
+/* =====================================================
+   ACCOUNT FORM
+===================================================== */
+
+.accField{
+    width:100%;
+    padding:13px;
+    margin-top:10px;
+    border-radius:11px;
+    border:2px solid #7fd4ff;
+    background:#fff;
+    color:#22303f;
+    font-size:16px;
+    text-align:center;
+    outline:none;
+    user-select:text;
+}
+
+.accTabs{
+    display:flex;
+    gap:8px;
+    margin:8px 0 4px;
+}
+
+.accTab{
+    flex:1;
+    padding:10px;
+    border:0;
+    border-radius:10px;
+    background:#e6f3ff;
+    color:#3b6b8a;
+    font-weight:bold;
+    font-size:15px;
+    cursor:pointer;
+}
+
+.accTab.active{
+    background:linear-gradient(135deg,#ff9ec4,#ff5e9c);
+    color:#fff;
+}
+
+.accMsg{
+    min-height:22px;
+    margin-top:10px;
+    font-size:14px;
+    color:#e0446a;
+}
+
+.linkRow{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+}
+
+.linkRow .loginButton{
+    margin-top:0;
+}
+
+
+/* =====================================================
+   LOADING SCREEN
+===================================================== */
+
+#loadingScreen{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:
+        linear-gradient(
+            135deg,
+            #84fab0,
+            #8fd3f4 55%,
+            #fbc2eb
+        );
+}
+
+#loadTitle{
+    font-size:44px;
+    font-weight:bold;
+    color:#fff;
+    letter-spacing:2px;
+    text-shadow:
+        0 3px 0 rgba(0,120,180,.45),
+        0 0 26px rgba(255,255,255,.8);
+    margin-bottom:26px;
+    animation:loadPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes loadPulse{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.06); }
+}
+
+#loadBarOuter{
+    width:min(420px,80%);
+    height:26px;
+    border-radius:14px;
+    background:rgba(255,255,255,.55);
+    border:3px solid #fff;
+    box-shadow:0 6px 20px rgba(0,120,180,.3);
+    overflow:hidden;
+}
+
+#loadBarFill{
+    width:0%;
+    height:100%;
+    border-radius:11px;
+    background:linear-gradient(90deg,#ff9ec4,#ffd166,#4dd0ff,#7CFC00);
+    background-size:300% 100%;
+    animation:barShift 1.6s linear infinite;
+    transition:width .18s ease;
+}
+
+@keyframes barShift{
+    0%{ background-position:0% 0; }
+    100%{ background-position:300% 0; }
+}
+
+#loadPercent{
+    margin-top:14px;
+    font-size:20px;
+    font-weight:bold;
+    color:#0b5f86;
+}
+
+
+/* =====================================================
+   WELCOME ANIMATION
+===================================================== */
+
+#welcomeOverlay{
+    position:fixed;
+    inset:0;
+    z-index:1500;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    pointer-events:none;
+}
+
+#welcomeBig{
+    font-size:60px;
+    font-weight:bold;
+    color:#fff;
+    text-align:center;
+    padding:0 20px;
+    text-shadow:
+        0 4px 0 rgba(0,120,180,.5),
+        0 0 30px rgba(255,255,255,.9),
+        0 0 60px #ffd166;
+    opacity:0;
+    transform:scale(.3);
+}
+
+#welcomeBig.play{
+    animation:welcomePop 1.8s ease forwards;
+}
+
+@keyframes welcomePop{
+    0%{ opacity:0; transform:scale(.3); }
+    35%{ opacity:1; transform:scale(1.15); }
+    55%{ transform:scale(1); }
+    80%{ opacity:1; transform:scale(1.05); }
+    100%{ opacity:0; transform:scale(1.6); }
+}
+
+
+/* =====================================================
+   MAP + SKIN PICKER
+===================================================== */
+
+.pickLabel{
+    margin-top:16px;
+    font-weight:bold;
+    color:#2f6f8f;
+}
+
+#skinPicker{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+.skinCard{
+    width:84px;
+    padding:8px 4px;
+    border-radius:14px;
+    border:3px solid #cfe9ff;
+    background:#f2fbff;
+    cursor:pointer;
+    text-align:center;
+    font-size:12px;
+    color:#3b6b8a;
+    font-weight:bold;
+    transition:transform .12s ease;
+}
+
+.skinCard canvas{
+    width:56px;
+    height:56px;
+    display:block;
+    margin:0 auto 4px;
+}
+
+.skinCard.sel{
+    border-color:#ff5e9c;
+    background:#fff0f6;
+    transform:scale(1.06);
+    box-shadow:0 6px 18px rgba(255,90,150,.4);
+}
+
+#mapPicker{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:10px;
+}
+
+.mapCard{
+    width:96px;
+    padding:8px 4px;
+    border-radius:14px;
+    border:3px solid #cfe9ff;
+    background:#f2fbff;
+    cursor:pointer;
+    text-align:center;
+    font-size:12px;
+    color:#3b6b8a;
+    font-weight:bold;
+    transition:transform .12s ease;
+}
+
+.mapCard .swatch{
+    width:100%;
+    height:40px;
+    border-radius:9px;
+    margin-bottom:5px;
+}
+
+.mapCard.sel{
+    border-color:#22b8ff;
+    background:#eaf7ff;
+    transform:scale(1.06);
+    box-shadow:0 6px 18px rgba(40,180,255,.4);
+}
+
+@media(max-width:700px){
+    #loadTitle{ font-size:30px; }
+    #welcomeBig{ font-size:34px; }
+    .skinCard{ width:70px; }
+    .mapCard{ width:78px; }
+}
+
 </style>
 </head>
 
 
 <body>
+
+
+<!-- =====================================================
+     LOADING SCREEN
+===================================================== -->
+
+<div id="loadingScreen">
+
+    <div id="loadTitle">🥚 EGG MONSTER 🐣</div>
+
+    <div id="loadBarOuter">
+        <div id="loadBarFill"></div>
+    </div>
+
+    <div id="loadPercent">0%</div>
+
+</div>
+
+
+<!-- =====================================================
+     WELCOME ANIMATION
+===================================================== -->
+
+<div id="welcomeOverlay">
+    <div id="welcomeBig"></div>
+</div>
 
 
 <!-- =====================================================
@@ -903,22 +1375,97 @@ body.touch #controls{
         <h1>EGG MONSTER</h1>
 
         <p>
-            Đăng nhập để lưu điểm và tham gia bảng xếp hạng.
+            Đăng nhập, tạo tài khoản hoặc liên kết Facebook/Gmail.
         </p>
 
-        <button
-            class="loginButton googleButton"
-            onclick="loginGoogle()"
-        >
-            🔵 Đăng nhập bằng Google
-        </button>
+        <div class="accTabs">
+            <button
+                class="accTab active"
+                id="tabLogin"
+                onclick="switchToLogin()"
+            >
+                ĐĂNG NHẬP
+            </button>
+            <button
+                class="accTab"
+                id="tabRegister"
+                onclick="switchToRegister()"
+            >
+                TẠO TÀI KHOẢN
+            </button>
+        </div>
 
-        <button
-            class="loginButton facebookButton"
-            onclick="loginFacebook()"
-        >
-            🔵 Đăng nhập bằng Facebook
-        </button>
+        <!-- FORM ĐĂNG NHẬP -->
+        <div id="loginForm">
+            <input
+                class="accField"
+                id="accUser"
+                maxlength="20"
+                placeholder="Tên tài khoản"
+                autocomplete="username"
+            >
+            <input
+                class="accField"
+                id="accPass"
+                type="password"
+                maxlength="30"
+                placeholder="Mật khẩu"
+                autocomplete="current-password"
+            >
+            <button
+                class="loginButton guestButton"
+                style="background:linear-gradient(135deg,#22b8ff,#5367ff)"
+                onclick="loginAccount()"
+            >
+                🔑 ĐĂNG NHẬP
+            </button>
+        </div>
+
+        <!-- FORM ĐĂNG KÝ -->
+        <div id="registerForm" style="display:none">
+            <input
+                class="accField"
+                id="accName2"
+                maxlength="20"
+                placeholder="Tên nhân vật"
+            >
+            <input
+                class="accField"
+                id="accUser2"
+                maxlength="20"
+                placeholder="Tên tài khoản (duy nhất)"
+                autocomplete="username"
+            >
+            <input
+                class="accField"
+                id="accPass2"
+                type="password"
+                maxlength="30"
+                placeholder="Mật khẩu (≥ 4 ký tự)"
+                autocomplete="new-password"
+            >
+            <button
+                class="loginButton guestButton"
+                onclick="registerAccount()"
+            >
+                📝 ĐĂNG KÝ
+            </button>
+        </div>
+
+        <div class="linkRow">
+            <button
+                class="loginButton googleButton"
+                onclick="loginGoogle()"
+            >
+                ✉️ Gmail
+            </button>
+            <button
+                class="loginButton facebookButton"
+                onclick="loginFacebook()"
+            >
+                📘 Facebook
+            </button>
+        </div>
 
         <button
             class="loginButton guestButton"
@@ -927,7 +1474,7 @@ body.touch #controls{
             🎮 Chơi khách (không cần mạng)
         </button>
 
-        <div id="loginStatus"></div>
+        <div id="loginStatus" class="accMsg"></div>
 
     </div>
 
@@ -1029,6 +1576,46 @@ body.touch #controls{
             </option>
 
         </select>
+
+        <div class="pickLabel">🗺️ Chọn bản đồ</div>
+        <div id="mapPicker">
+            <div class="mapCard sel" data-map="forest" onclick="selectMap('forest')">
+                <div class="swatch" style="background:linear-gradient(135deg,#7ed957,#2f8f4e)"></div>
+                Khu rừng
+            </div>
+            <div class="mapCard" data-map="desert" onclick="selectMap('desert')">
+                <div class="swatch" style="background:linear-gradient(135deg,#ffe08a,#e0a94f)"></div>
+                Sa mạc
+            </div>
+            <div class="mapCard" data-map="temple" onclick="selectMap('temple')">
+                <div class="swatch" style="background:linear-gradient(135deg,#d9c7a3,#9c7b4f)"></div>
+                Đền thờ
+            </div>
+            <div class="mapCard" data-map="coast" onclick="selectMap('coast')">
+                <div class="swatch" style="background:linear-gradient(135deg,#8ff0ff,#3aa0d0)"></div>
+                Bờ biển
+            </div>
+        </div>
+
+        <div class="pickLabel">🧑‍🎤 Chọn nhân vật</div>
+        <div id="skinPicker">
+            <div class="skinCard sel" data-skin="0" onclick="selectSkin(0)">
+                <canvas width="56" height="56"></canvas>
+                Mèo xanh
+            </div>
+            <div class="skinCard" data-skin="1" onclick="selectSkin(1)">
+                <canvas width="56" height="56"></canvas>
+                Nữ xanh
+            </div>
+            <div class="skinCard" data-skin="2" onclick="selectSkin(2)">
+                <canvas width="56" height="56"></canvas>
+                Nữ trắng
+            </div>
+            <div class="skinCard" data-skin="3" onclick="selectSkin(3)">
+                <canvas width="56" height="56"></canvas>
+                Hiệp sĩ
+            </div>
+        </div>
 
         <br>
 
@@ -1317,6 +1904,1101 @@ let getDocs = null;
 
 
 /* =====================================================
+   TRẠNG THÁI GIAO DIỆN / GAME (MỚI)
+===================================================== */
+
+const TAU = Math.PI*2;
+
+let currentSkin = 0;
+
+let currentMap = "forest";
+
+let usedWords = new Set();
+
+let bullets = [];
+
+
+/* =====================================================
+   ÂM THANH (WEB AUDIO TỔNG HỢP)
+===================================================== */
+
+let audioCtx = null;
+
+
+function ensureAudio(){
+
+    if(!audioCtx){
+
+        try{
+
+            audioCtx =
+                new (
+                    window.AudioContext ||
+                    window.webkitAudioContext
+                )();
+
+        }catch(e){
+
+            audioCtx=null;
+
+        }
+
+    }
+
+
+    if(
+        audioCtx &&
+        audioCtx.state==="suspended"
+    ){
+
+        audioCtx.resume();
+
+    }
+
+
+    return audioCtx;
+
+}
+
+
+function playTone(o){
+
+    const ac=ensureAudio();
+
+    if(!ac)return;
+
+
+    const t0=ac.currentTime+(o.delay||0);
+
+    const dur=o.dur||.15;
+
+    const osc=ac.createOscillator();
+
+    const g=ac.createGain();
+
+
+    osc.type=o.type||"sine";
+
+    osc.frequency.setValueAtTime(
+        o.freq||440,
+        t0
+    );
+
+
+    if(o.to){
+
+        osc.frequency.exponentialRampToValueAtTime(
+            Math.max(1,o.to),
+            t0+dur
+        );
+
+    }
+
+
+    g.gain.setValueAtTime(0,t0);
+
+    g.gain.linearRampToValueAtTime(
+        o.vol||.2,
+        t0+.012
+    );
+
+    g.gain.exponentialRampToValueAtTime(
+        .0001,
+        t0+dur
+    );
+
+
+    osc.connect(g);
+
+    g.connect(ac.destination);
+
+    osc.start(t0);
+
+    osc.stop(t0+dur+.03);
+
+}
+
+
+function playNoise(o){
+
+    const ac=ensureAudio();
+
+    if(!ac)return;
+
+
+    const dur=o.dur||.2;
+
+    const t0=ac.currentTime+(o.delay||0);
+
+    const len=Math.max(
+        1,
+        Math.floor(ac.sampleRate*dur)
+    );
+
+
+    const buf=ac.createBuffer(1,len,ac.sampleRate);
+
+    const data=buf.getChannelData(0);
+
+
+    for(let i=0;i<len;i++){
+
+        data[i]=
+            (Math.random()*2-1)*(1-i/len);
+
+    }
+
+
+    const src=ac.createBufferSource();
+
+    src.buffer=buf;
+
+
+    const f=ac.createBiquadFilter();
+
+    f.type=o.filter||"lowpass";
+
+    f.frequency.value=o.freq||1000;
+
+
+    const g=ac.createGain();
+
+    g.gain.setValueAtTime(o.vol||.2,t0);
+
+    g.gain.exponentialRampToValueAtTime(
+        .0001,
+        t0+dur
+    );
+
+
+    src.connect(f);
+
+    f.connect(g);
+
+    g.connect(ac.destination);
+
+    src.start(t0);
+
+    src.stop(t0+dur);
+
+}
+
+
+function sfxClick(){
+
+    playTone({freq:720,to:1200,dur:.1,type:"triangle",vol:.16});
+
+    playTone({freq:1250,dur:.07,type:"sine",vol:.09,delay:.06});
+
+}
+
+
+function sfxShoot(){
+
+    playNoise({dur:.1,vol:.22,freq:2800,filter:"highpass"});
+
+    playTone({freq:950,to:120,dur:.13,type:"sawtooth",vol:.15});
+
+}
+
+
+function sfxHammer(){
+
+    playTone({freq:170,to:60,dur:.2,type:"sine",vol:.3});
+
+    playNoise({dur:.09,vol:.18,freq:700});
+
+}
+
+
+function sfxCry(){
+
+    playTone({freq:115,to:70,dur:.6,type:"sawtooth",vol:.15});
+
+    playTone({freq:92,to:58,dur:.55,type:"square",vol:.06,delay:.05});
+
+    playNoise({dur:.5,vol:.07,freq:520});
+
+}
+
+
+function sfxDeath(){
+
+    playTone({freq:320,to:40,dur:.5,type:"sawtooth",vol:.2});
+
+    playNoise({dur:.4,vol:.16,freq:900});
+
+}
+
+
+/*
+   Tiếng "tách" đặc trưng mỗi khi bấm
+   một nút bất kỳ ở ngoài sảnh.
+*/
+
+document.addEventListener(
+"click",
+e=>{
+
+    const t=e.target;
+
+
+    if(
+        t.closest &&
+        t.closest(
+            "#loginScreen button,"+
+            "#menu button,"+
+            "#profileScreen button,"+
+            "#leaderboard button,"+
+            "#gameover button,"+
+            ".mapCard,.skinCard,.accTab"
+        )
+    ){
+
+        sfxClick();
+
+    }
+
+});
+
+
+/* =====================================================
+   TÀI KHOẢN LOCAL (OFFLINE)
+===================================================== */
+
+const ACC_KEY="emwh_accounts";
+
+const SES_KEY="emwh_session";
+
+let accountUser=null;
+
+
+function loadAccounts(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem(ACC_KEY)
+        )||{};
+
+    }catch(e){
+
+        return {};
+
+    }
+
+}
+
+
+function saveAccounts(a){
+
+    try{
+
+        localStorage.setItem(
+            ACC_KEY,
+            JSON.stringify(a)
+        );
+
+    }catch(e){}
+
+}
+
+
+function getSession(){
+
+    try{
+
+        return localStorage.getItem(SES_KEY);
+
+    }catch(e){
+
+        return null;
+
+    }
+
+}
+
+
+function setSession(u){
+
+    try{
+
+        if(u)
+            localStorage.setItem(SES_KEY,u);
+
+        else
+            localStorage.removeItem(SES_KEY);
+
+    }catch(e){}
+
+}
+
+
+function persistSelection(){
+
+    if(!accountUser)
+        return;
+
+
+    const accs=loadAccounts();
+
+
+    if(!accs[accountUser])
+        return;
+
+
+    accs[accountUser].skin=currentSkin;
+
+    accs[accountUser].map=currentMap;
+
+    accs[accountUser].language=selectedLanguage;
+
+
+    saveAccounts(accs);
+
+}
+
+
+function syncPickers(){
+
+    document
+        .querySelectorAll(".skinCard")
+        .forEach(c=>{
+
+            c.classList.toggle(
+                "sel",
+                +c.dataset.skin===currentSkin
+            );
+
+        });
+
+
+    document
+        .querySelectorAll(".mapCard")
+        .forEach(c=>{
+
+            c.classList.toggle(
+                "sel",
+                c.dataset.map===currentMap
+            );
+
+        });
+
+
+    const lang=
+        document.getElementById(
+            "languageSelect"
+        );
+
+
+    if(lang)
+        lang.value=selectedLanguage;
+
+}
+
+
+function enterGameAsUser(acc){
+
+    characterName=
+        acc.name||acc.username||"Bạn";
+
+
+    currentSkin=acc.skin||0;
+
+    currentMap=acc.map||"forest";
+
+    selectedLanguage=acc.language||"vi";
+
+
+    syncPickers();
+
+
+    document.getElementById(
+        "loginScreen"
+    ).style.display="none";
+
+
+    document.getElementById(
+        "profileScreen"
+    ).style.display="none";
+
+
+    showMainMenu();
+
+}
+
+
+window.switchToLogin=function(){
+
+    document.getElementById(
+        "loginForm"
+    ).style.display="block";
+
+    document.getElementById(
+        "registerForm"
+    ).style.display="none";
+
+    document.getElementById(
+        "tabLogin"
+    ).classList.add("active");
+
+    document.getElementById(
+        "tabRegister"
+    ).classList.remove("active");
+
+    document.getElementById(
+        "loginStatus"
+    ).textContent="";
+
+};
+
+
+window.switchToRegister=function(){
+
+    document.getElementById(
+        "loginForm"
+    ).style.display="none";
+
+    document.getElementById(
+        "registerForm"
+    ).style.display="block";
+
+    document.getElementById(
+        "tabRegister"
+    ).classList.add("active");
+
+    document.getElementById(
+        "tabLogin"
+    ).classList.remove("active");
+
+    document.getElementById(
+        "loginStatus"
+    ).textContent="";
+
+};
+
+
+function accMsg(text){
+
+    document.getElementById(
+        "loginStatus"
+    ).textContent=text;
+
+}
+
+
+window.registerAccount=function(){
+
+    const name=
+        document.getElementById("accName2")
+            .value.trim();
+
+    const user=
+        document.getElementById("accUser2")
+            .value.trim().toLowerCase();
+
+    const pass=
+        document.getElementById("accPass2").value;
+
+
+    if(name.length<2){
+
+        accMsg("Tên nhân vật ≥ 2 ký tự.");
+        return;
+
+    }
+
+
+    if(user.length<3){
+
+        accMsg("Tên tài khoản ≥ 3 ký tự.");
+        return;
+
+    }
+
+
+    if(!/^[a-z0-9_.]+$/.test(user)){
+
+        accMsg("Tài khoản chỉ gồm chữ/số/_ .");
+        return;
+
+    }
+
+
+    if(pass.length<4){
+
+        accMsg("Mật khẩu ≥ 4 ký tự.");
+        return;
+
+    }
+
+
+    const accs=loadAccounts();
+
+
+    if(accs[user]){
+
+        accMsg("❌ Tên tài khoản đã tồn tại!");
+        return;
+
+    }
+
+
+    accs[user]={
+
+        name:name,
+
+        username:user,
+
+        password:pass,
+
+        highScore:0,
+
+        skin:0,
+
+        map:"forest",
+
+        language:"vi",
+
+        createdAt:Date.now()
+
+    };
+
+
+    saveAccounts(accs);
+
+    setSession(user);
+
+    accountUser=user;
+
+    accMsg("✅ Đăng ký thành công!");
+
+
+    setTimeout(
+        ()=>enterGameAsUser(accs[user]),
+        400
+    );
+
+};
+
+
+window.loginAccount=function(){
+
+    const user=
+        document.getElementById("accUser")
+            .value.trim().toLowerCase();
+
+    const pass=
+        document.getElementById("accPass").value;
+
+
+    const accs=loadAccounts();
+
+
+    if(!accs[user]){
+
+        accMsg("❌ Không tìm thấy tài khoản.");
+        return;
+
+    }
+
+
+    if(accs[user].password!==pass){
+
+        accMsg("❌ Sai mật khẩu.");
+        return;
+
+    }
+
+
+    setSession(user);
+
+    accountUser=user;
+
+    accMsg("✅ Xin chào "+(accs[user].name||user)+"!");
+
+
+    setTimeout(
+        ()=>enterGameAsUser(accs[user]),
+        400
+    );
+
+};
+
+
+/* =====================================================
+   MÀN HÌNH LOADING + CHÀO MỪNG
+===================================================== */
+
+function bootLoading(){
+
+    renderSkinPreviews();
+
+
+    const fill=
+        document.getElementById("loadBarFill");
+
+    const pct=
+        document.getElementById("loadPercent");
+
+
+    let p=0;
+
+
+    const iv=setInterval(
+        ()=>{
+
+            p+=Math.random()*13+5;
+
+
+            if(p>=100){
+
+                p=100;
+
+                clearInterval(iv);
+
+                setTimeout(finishLoading,320);
+
+            }
+
+
+            fill.style.width=p+"%";
+
+            pct.textContent=Math.floor(p)+"%";
+
+        },
+        130
+    );
+
+}
+
+
+function finishLoading(){
+
+    document.getElementById(
+        "loadingScreen"
+    ).style.display="none";
+
+
+    const s=getSession();
+
+    const accs=loadAccounts();
+
+
+    if(s && accs[s]){
+
+        accountUser=s;
+
+        enterGameAsUser(accs[s]);
+
+    }else{
+
+        document.getElementById(
+            "loginScreen"
+        ).style.display="flex";
+
+    }
+
+}
+
+
+function showWelcome(name){
+
+    const ov=
+        document.getElementById("welcomeOverlay");
+
+    const big=
+        document.getElementById("welcomeBig");
+
+
+    big.textContent=
+        "CHÀO MỪNG, "+
+        (name||"").toUpperCase()+
+        "!";
+
+
+    ov.style.display="flex";
+
+    big.classList.remove("play");
+
+
+    void big.offsetWidth;
+
+
+    big.classList.add("play");
+
+
+    setTimeout(
+        ()=>{
+
+            ov.style.display="none";
+
+            big.classList.remove("play");
+
+        },
+        1850
+    );
+
+}
+
+
+/* =====================================================
+   SKIN NHÂN VẬT
+===================================================== */
+
+window.selectSkin=function(n){
+
+    currentSkin=n;
+
+    syncPickers();
+
+    persistSelection();
+
+};
+
+
+window.selectMap=function(m){
+
+    currentMap=m;
+
+    syncPickers();
+
+    buildDecor(m);
+
+    persistSelection();
+
+};
+
+
+function drawCharacter(c,cx,cy,s,skin){
+
+    c.save();
+
+    c.translate(cx,cy);
+
+    c.scale(s,s);
+
+
+    if(skin===1)
+        drawSkinGirl(c,"#2b6fd6","#ffffff","#ffffff");
+
+    else if(skin===2)
+        drawSkinGirl(c,"#ffffff","#3aa0ff","#ffffff");
+
+    else if(skin===3)
+        drawSkinKnight(c);
+
+    else
+        drawSkinRobot(c);
+
+
+    c.restore();
+
+}
+
+
+function drawSkinRobot(c){
+
+    c.fillStyle="#1e9fd0";
+
+    c.beginPath();
+    c.arc(0,0,37,0,TAU);
+    c.fill();
+
+
+    c.fillStyle="#f5fbff";
+
+    c.beginPath();
+    c.arc(0,-2,29,0,TAU);
+    c.fill();
+
+
+    c.fillStyle="#1e9fd0";
+
+    c.beginPath();
+    c.arc(-24,-29,12,0,TAU);
+    c.arc(24,-29,12,0,TAU);
+    c.fill();
+
+
+    c.fillStyle="#111";
+
+    c.beginPath();
+    c.arc(-9,-8,4,0,TAU);
+    c.arc(9,-8,4,0,TAU);
+    c.fill();
+
+
+    c.fillStyle="#e63232";
+
+    c.beginPath();
+    c.arc(0,1,5,0,TAU);
+    c.fill();
+
+}
+
+
+function drawSkinGirl(c,pants,shirt,sleeve){
+
+    /* chân */
+    c.fillStyle=pants;
+    c.fillRect(-14,8,11,30);
+    c.fillRect(3,8,11,30);
+
+
+    /* giày */
+    c.fillStyle="#5b3a29";
+    c.fillRect(-15,36,13,8);
+    c.fillRect(2,36,13,8);
+
+
+    /* thân áo */
+    c.fillStyle=shirt;
+    c.fillRect(-16,-16,32,28);
+
+
+    /* tay áo */
+    c.fillStyle=sleeve;
+    c.fillRect(-25,-14,9,26);
+    c.fillRect(16,-14,9,26);
+
+
+    /* bàn tay */
+    c.fillStyle="#f2c9a0";
+    c.beginPath();
+    c.arc(-20,14,5,0,TAU);
+    c.arc(21,14,5,0,TAU);
+    c.fill();
+
+
+    /* đầu */
+    c.fillStyle="#f7d3b0";
+    c.beginPath();
+    c.arc(0,-30,16,0,TAU);
+    c.fill();
+
+
+    /* tóc */
+    c.fillStyle="#5a3825";
+    c.beginPath();
+    c.arc(0,-33,17,Math.PI,0);
+    c.fill();
+    c.fillRect(-17,-33,5,22);
+    c.fillRect(12,-33,5,22);
+
+
+    /* mắt */
+    c.fillStyle="#22303f";
+    c.beginPath();
+    c.arc(-6,-30,2.6,0,TAU);
+    c.arc(6,-30,2.6,0,TAU);
+    c.fill();
+
+
+    /* miệng */
+    c.strokeStyle="#c9736a";
+    c.lineWidth=2;
+    c.beginPath();
+    c.arc(0,-25,5,.2,Math.PI-.2);
+    c.stroke();
+
+}
+
+
+function drawSkinKnight(c){
+
+    /* chân */
+    c.fillStyle="#6b7280";
+    c.fillRect(-14,8,11,30);
+    c.fillRect(3,8,11,30);
+
+
+    c.fillStyle="#4b5563";
+    c.fillRect(-15,36,13,8);
+    c.fillRect(2,36,13,8);
+
+
+    /* giáp thân */
+    c.fillStyle="#9aa4b2";
+    c.fillRect(-17,-16,34,28);
+
+    c.fillStyle="#c9d2de";
+    c.fillRect(-17,-16,34,8);
+
+    c.fillStyle="#ffcf4d";
+    c.fillRect(-3,-14,6,24);
+
+
+    /* tay */
+    c.fillStyle="#8b95a3";
+    c.fillRect(-26,-14,9,26);
+    c.fillRect(17,-14,9,26);
+
+
+    /* mũ sắt */
+    c.fillStyle="#b7c0cd";
+    c.beginPath();
+    c.arc(0,-30,16,0,TAU);
+    c.fill();
+
+
+    c.fillStyle="#2b3442";
+    c.fillRect(-12,-33,24,7);
+
+
+    /* chóp lông */
+    c.fillStyle="#ff4d6d";
+    c.beginPath();
+    c.moveTo(0,-48);
+    c.lineTo(7,-30);
+    c.lineTo(-7,-30);
+    c.closePath();
+    c.fill();
+
+}
+
+
+function renderSkinPreviews(){
+
+    document
+        .querySelectorAll(".skinCard")
+        .forEach(card=>{
+
+            const cv=card.querySelector("canvas");
+
+            if(!cv)
+                return;
+
+
+            const c=cv.getContext("2d");
+
+            c.clearRect(0,0,56,56);
+
+            drawCharacter(
+                c,
+                28,
+                30,
+                .58,
+                +card.dataset.skin
+            );
+
+        });
+
+}
+
+
+/* =====================================================
+   ĐẠN (BẮN KHI GÕ CHỮ)
+===================================================== */
+
+function fireBullet(target){
+
+    if(!target)
+        return;
+
+
+    bullets.push({
+
+        x:player.x,
+
+        y:player.y,
+
+        target:target,
+
+        speed:1100,
+
+        alive:true
+
+    });
+
+
+    player.gunRecoil=.14;
+
+    sfxShoot();
+
+}
+
+
+function updateBullets(dt){
+
+    for(const b of bullets){
+
+        if(!b.alive)
+            continue;
+
+
+        const t=b.target;
+
+
+        if(!t || !t.alive){
+
+            b.alive=false;
+
+            continue;
+
+        }
+
+
+        const dx=t.x-b.x;
+
+        const dy=t.y-b.y;
+
+        const d=Math.sqrt(dx*dx+dy*dy);
+
+        const step=b.speed*dt;
+
+
+        if(d<=step){
+
+            b.alive=false;
+
+            t.hitFlash=.14;
+
+            continue;
+
+        }
+
+
+        b.x+=dx/d*step;
+
+        b.y+=dy/d*step;
+
+    }
+
+
+    bullets=bullets.filter(b=>b.alive);
+
+}
+
+
+function drawBullets(){
+
+    for(const b of bullets){
+
+        const x=b.x-cameraX;
+
+        const y=b.y-cameraY;
+
+
+        ctx.fillStyle="rgba(255,220,90,.5)";
+
+        ctx.beginPath();
+        ctx.arc(x,y,7,0,TAU);
+        ctx.fill();
+
+
+        ctx.fillStyle="#fff3a0";
+
+        ctx.beginPath();
+        ctx.arc(x,y,4,0,TAU);
+        ctx.fill();
+
+    }
+
+}
+
+
+/* =====================================================
    FIREBASE CONFIG
 =====================================================
 
@@ -1489,6 +3171,11 @@ async function(){
             result.user;
 
 
+        guestMode=false;
+
+        await loadPlayerProfile();
+
+
     }catch(error){
 
         console.error(error);
@@ -1544,6 +3231,11 @@ async function(){
             result.user;
 
 
+        guestMode=false;
+
+        await loadPlayerProfile();
+
+
     }catch(error){
 
         console.error(error);
@@ -1571,6 +3263,10 @@ function(){
     guestMode = true;
 
     currentUser = null;
+
+    accountUser = null;
+
+    setSession(null);
 
     document.getElementById(
         "loginScreen"
@@ -1774,6 +3470,30 @@ function showMainMenu(){
 window.saveHighScore =
 async function(){
 
+    /*
+       Tài khoản local (offline): lưu
+       điểm cao nhất vào localStorage.
+    */
+
+    if(accountUser){
+
+        const accs=loadAccounts();
+
+        const acc=accs[accountUser];
+
+        if(acc && score>(acc.highScore||0)){
+
+            acc.highScore=score;
+
+            acc.name=characterName;
+
+            saveAccounts(accs);
+
+        }
+
+    }
+
+
     if(!currentUser)
         return;
 
@@ -1869,6 +3589,71 @@ function(){
    LOAD LEADERBOARD
 ===================================================== */
 
+function renderLocalLeaderboard(container){
+
+    const accs=loadAccounts();
+
+    const rows=
+        Object.values(accs)
+            .map(a=>({
+                name:a.name||a.username,
+                score:a.highScore||0
+            }))
+            .sort((a,b)=>b.score-a.score)
+            .slice(0,100);
+
+
+    if(rows.length===0){
+
+        container.innerHTML=
+            "Chưa có người chơi nào.<br><br>"+
+            "Tạo tài khoản để lưu điểm và "+
+            "xuất hiện trên bảng xếp hạng.";
+
+        return;
+
+    }
+
+
+    container.innerHTML="";
+
+
+    rows.forEach((r,i)=>{
+
+        const row=document.createElement("div");
+
+        row.className="rankRow";
+
+
+        const rank=document.createElement("div");
+
+        rank.className="rank";
+        rank.textContent="#"+(i+1);
+
+
+        const name=document.createElement("div");
+
+        name.className="rankName";
+        name.textContent=r.name;
+
+
+        const sc=document.createElement("div");
+
+        sc.className="rankScore";
+        sc.textContent=r.score;
+
+
+        row.appendChild(rank);
+        row.appendChild(name);
+        row.appendChild(sc);
+
+        container.appendChild(row);
+
+    });
+
+}
+
+
 async function loadLeaderboard(){
 
     const container =
@@ -1879,10 +3664,7 @@ async function loadLeaderboard(){
 
     if(guestMode || !db){
 
-        container.innerHTML =
-            "Bạn đang chơi ở chế độ khách (offline).<br><br>" +
-            "Đăng nhập bằng Google hoặc Facebook để lưu điểm " +
-            "và xem bảng xếp hạng trực tuyến.";
+        renderLocalLeaderboard(container);
 
         return;
 
@@ -2508,6 +4290,8 @@ const player = {
 
     hammerTimer:0,
 
+    gunRecoil:0,
+
     health:MAX_HEALTH,
 
     invulnTimer:0,
@@ -2578,13 +4362,83 @@ function chooseWord(){
             selectedLanguage
         ];
 
-    const item =
-        list[
-            Math.floor(
-                Math.random() *
-                list.length
-            )
-        ];
+
+    /*
+       Loại bỏ các từ đã gặp để không
+       bao giờ lặp lại từ cũ.
+    */
+
+    let pool =
+        list.filter(
+            it=>!usedWords.has(it[1])
+        );
+
+
+    if(pool.length===0){
+
+        usedWords.clear();
+
+        pool=list.slice();
+
+    }
+
+
+    /*
+       Điểm càng cao → từ càng dài/khó.
+       Sắp xếp theo độ dài rồi chọn dải
+       phù hợp với bậc điểm hiện tại.
+    */
+
+    pool.sort(
+        (a,b)=>a[1].length-b[1].length
+    );
+
+
+    const n=pool.length;
+
+    const tier =
+        score<150 ? 0 :
+        score<400 ? 1 :
+        score<800 ? 2 :
+        3;
+
+
+    let start,end;
+
+    if(tier===0){
+        start=0;
+        end=Math.max(1,Math.floor(n*.45));
+    }else if(tier===1){
+        start=Math.floor(n*.25);
+        end=Math.max(start+1,Math.floor(n*.7));
+    }else if(tier===2){
+        start=Math.floor(n*.5);
+        end=Math.max(start+1,Math.floor(n*.9));
+    }else{
+        start=Math.floor(n*.65);
+        end=n;
+    }
+
+
+    end=Math.min(end,n);
+
+    if(end<=start)
+        end=start+1;
+
+
+    const idx=
+        start+
+        Math.floor(
+            Math.random()*(end-start)
+        );
+
+
+    const item=
+        pool[Math.min(idx,n-1)];
+
+
+    usedWords.add(item[1]);
+
 
     return {
 
@@ -2724,6 +4578,15 @@ function(){
         ).value;
 
 
+    bullets=[];
+
+    usedWords.clear();
+
+    buildDecor(currentMap);
+
+    persistSelection();
+
+
     gameRunning=true;
 
     level=1;
@@ -2775,6 +4638,8 @@ function(){
 
 
     updateUI();
+
+    showWelcome(characterName);
 
     lastTime =
         performance.now();
@@ -3099,6 +4964,15 @@ function updatePlayer(dt){
 
 
     if(
+        player.gunRecoil>0
+    ){
+
+        player.gunRecoil-=dt;
+
+    }
+
+
+    if(
         player.invulnTimer>0
     ){
 
@@ -3144,6 +5018,8 @@ function updatePlayer(dt){
 function attackEgg(){
 
     player.hammerTimer=.35;
+
+    sfxHammer();
 
 
     for(
@@ -3233,7 +5109,13 @@ function spawnMonster(egg){
 
         flashCount:0,
 
-        flashTimer:0
+        flashTimer:0,
+
+        hitFlash:0,
+
+        shotsFired:0,
+
+        cryTimer:1.5
 
     };
 
@@ -3245,6 +5127,9 @@ function spawnMonster(egg){
 
     activeMonster =
         monster;
+
+
+    sfxCry();
 
 
     openWordPanel(
@@ -3344,6 +5229,27 @@ function updateMonsters(dt){
 
             monster.y +=
                 dy/d*speed*dt;
+
+        }
+
+
+        if(monster.hitFlash>0)
+            monster.hitFlash-=dt;
+
+
+        if(monster===activeMonster){
+
+            monster.cryTimer-=dt;
+
+
+            if(monster.cryTimer<=0){
+
+                monster.cryTimer=
+                    3+Math.random()*3;
+
+                sfxCry();
+
+            }
 
         }
 
@@ -3670,6 +5576,34 @@ function(){
         );
 
 
+    const firedCount =
+        activeMonster.typed.length;
+
+
+    if(
+        firedCount>
+        activeMonster.shotsFired
+    ){
+
+        for(
+            let k=activeMonster.shotsFired;
+            k<firedCount;
+            k++
+        ){
+
+            fireBullet(
+                activeMonster
+            );
+
+        }
+
+
+        activeMonster.shotsFired=
+            firedCount;
+
+    }
+
+
     this.classList.remove(
         "error"
     );
@@ -3728,6 +5662,9 @@ function destroyMonster(monster){
     monster.flashCount=0;
 
     monster.flashTimer=.2;
+
+
+    sfxDeath();
 
 }
 
@@ -3961,15 +5898,51 @@ function updateCamera(){
 ===================================================== */
 
 /*
-   Cây trang trí rải khắp thế giới,
-   cuộn theo cả hai trục camera.
+   Vật trang trí rải khắp thế giới,
+   cuộn theo cả hai trục camera và
+   thay đổi theo từng bản đồ.
 */
 
 const TREES=[];
 
-(function(){
+
+const MAPS={
+
+    forest:{
+        ground:["#a7e878","#4caf50"],
+        grid:"rgba(255,255,255,.18)",
+        decor:["tree","tree","bush","flower"]
+    },
+
+    desert:{
+        ground:["#ffe6a7","#e8b563"],
+        grid:"rgba(255,255,255,.14)",
+        decor:["cactus","rock","dune","dune"]
+    },
+
+    temple:{
+        ground:["#e8d9b8","#c2a878"],
+        grid:"rgba(255,255,255,.12)",
+        decor:["pillar","statue","block","block"]
+    },
+
+    coast:{
+        ground:["#ffe9b8","#f0d18a"],
+        grid:"rgba(255,255,255,.16)",
+        band:{y0:180,y1:430,color:["#63d7ff","#2b8fd6"]},
+        decor:["palm","shell","rock"]
+    }
+
+};
+
+
+function buildDecor(map){
+
+    TREES.length=0;
+
 
     let seed=987654321;
+
 
     function rnd(){
 
@@ -3980,62 +5953,286 @@ const TREES=[];
 
     }
 
-    for(let i=0;i<70;i++){
+
+    const types=
+        (MAPS[map]||MAPS.forest).decor;
+
+
+    for(let i=0;i<84;i++){
 
         TREES.push({
 
             x:60+rnd()*(WORLD_WIDTH-120),
 
-            y:220+rnd()*(WORLD_HEIGHT-280),
+            y:250+rnd()*(WORLD_HEIGHT-320),
 
-            r:26+rnd()*20
+            r:22+rnd()*20,
+
+            shade:rnd(),
+
+            flip:rnd()<.5?-1:1,
+
+            type:types[
+                Math.floor(rnd()*types.length)
+            ]
 
         });
 
     }
 
-})();
+
+    TREES.sort((a,b)=>a.y-b.y);
+
+}
+
+
+buildDecor("forest");
+
+
+function drawDecor(t,x,y){
+
+    ctx.fillStyle="rgba(0,0,0,.18)";
+
+    ctx.beginPath();
+    ctx.ellipse(x,y+24,22,8,0,0,TAU);
+    ctx.fill();
+
+
+    if(t.type==="tree"){
+
+        ctx.fillStyle="#8b5a2b";
+        ctx.fillRect(x-6,y-6,12,32);
+
+        ctx.fillStyle=
+            t.shade>.5?"#3fa656":"#2f8f4e";
+        ctx.beginPath();
+        ctx.arc(x,y-10,t.r,0,TAU);
+        ctx.fill();
+
+        ctx.fillStyle="rgba(255,255,255,.18)";
+        ctx.beginPath();
+        ctx.arc(x-t.r*.3,y-10-t.r*.3,t.r*.45,0,TAU);
+        ctx.fill();
+
+    }
+
+    else if(t.type==="bush"){
+
+        ctx.fillStyle="#4caf50";
+        ctx.beginPath();
+        ctx.arc(x,y,t.r*.6,0,TAU);
+        ctx.arc(x-t.r*.5,y+4,t.r*.45,0,TAU);
+        ctx.arc(x+t.r*.5,y+4,t.r*.45,0,TAU);
+        ctx.fill();
+
+    }
+
+    else if(t.type==="flower"){
+
+        ctx.strokeStyle="#3f9b57";
+        ctx.lineWidth=3;
+        ctx.beginPath();
+        ctx.moveTo(x,y+18);
+        ctx.lineTo(x,y-6);
+        ctx.stroke();
+
+        const cols=["#ff5e9c","#ffd166","#ff8c42","#c77dff"];
+        ctx.fillStyle=cols[Math.floor(t.shade*cols.length)];
+        for(let k=0;k<5;k++){
+            const a=k/5*TAU;
+            ctx.beginPath();
+            ctx.arc(x+Math.cos(a)*7,y-8+Math.sin(a)*7,5,0,TAU);
+            ctx.fill();
+        }
+        ctx.fillStyle="#fff3a0";
+        ctx.beginPath();
+        ctx.arc(x,y-8,4,0,TAU);
+        ctx.fill();
+
+    }
+
+    else if(t.type==="cactus"){
+
+        ctx.fillStyle="#3fae6a";
+        ctx.fillRect(x-7,y-24,14,48);
+        ctx.fillRect(x-20,y-8,13,8);
+        ctx.fillRect(x-20,y-8,8,20);
+        ctx.fillRect(x+7,y-16,13,8);
+        ctx.fillRect(x+12,y-16,8,22);
+
+        ctx.fillStyle="rgba(255,255,255,.15)";
+        ctx.fillRect(x-7,y-24,4,48);
+
+    }
+
+    else if(t.type==="rock"){
+
+        ctx.fillStyle= t.shade>.5 ? "#b9a88f" : "#a9987f";
+        ctx.beginPath();
+        ctx.moveTo(x-t.r,y+16);
+        ctx.lineTo(x-t.r*.5,y-t.r*.5);
+        ctx.lineTo(x+t.r*.4,y-t.r*.6);
+        ctx.lineTo(x+t.r,y+16);
+        ctx.closePath();
+        ctx.fill();
+
+    }
+
+    else if(t.type==="dune"){
+
+        ctx.fillStyle="rgba(255,255,255,.22)";
+        ctx.beginPath();
+        ctx.ellipse(x,y,t.r*1.6,t.r*.7,0,Math.PI,0);
+        ctx.fill();
+
+    }
+
+    else if(t.type==="pillar"){
+
+        ctx.fillStyle="#efe3c8";
+        ctx.fillRect(x-12,y-40,24,64);
+        ctx.fillStyle="#d8c7a3";
+        ctx.fillRect(x-16,y-46,32,10);
+        ctx.fillRect(x-16,y+22,32,10);
+        ctx.strokeStyle="rgba(0,0,0,.12)";
+        ctx.lineWidth=2;
+        for(let k=-1;k<=1;k++){
+            ctx.beginPath();
+            ctx.moveTo(x+k*6,y-36);
+            ctx.lineTo(x+k*6,y+20);
+            ctx.stroke();
+        }
+
+    }
+
+    else if(t.type==="statue"){
+
+        ctx.fillStyle="#d9cbb0";
+        ctx.fillRect(x-14,y+10,28,12);
+        ctx.fillRect(x-8,y-24,16,34);
+        ctx.beginPath();
+        ctx.arc(x,y-30,10,0,TAU);
+        ctx.fill();
+
+    }
+
+    else if(t.type==="block"){
+
+        ctx.fillStyle="#cbbb98";
+        ctx.fillRect(x-18,y-14,36,32);
+        ctx.fillStyle="rgba(255,255,255,.2)";
+        ctx.fillRect(x-18,y-14,36,8);
+        ctx.strokeStyle="rgba(0,0,0,.12)";
+        ctx.strokeRect(x-18,y-14,36,32);
+
+    }
+
+    else if(t.type==="palm"){
+
+        ctx.strokeStyle="#a5713d";
+        ctx.lineWidth=8;
+        ctx.beginPath();
+        ctx.moveTo(x,y+22);
+        ctx.quadraticCurveTo(x+10*t.flip,y-14,x+18*t.flip,y-34);
+        ctx.stroke();
+
+        ctx.fillStyle="#39b568";
+        const cx=x+18*t.flip, cy=y-34;
+        for(let k=0;k<6;k++){
+            const a=k/6*TAU;
+            ctx.beginPath();
+            ctx.ellipse(cx+Math.cos(a)*16,cy+Math.sin(a)*10,18,7,a,0,TAU);
+            ctx.fill();
+        }
+        ctx.fillStyle="#8b5a2b";
+        ctx.beginPath();
+        ctx.arc(cx,cy,5,0,TAU);
+        ctx.fill();
+
+    }
+
+    else if(t.type==="shell"){
+
+        ctx.fillStyle= t.shade>.5 ? "#ffd6e7" : "#fff0c9";
+        ctx.beginPath();
+        ctx.arc(x,y,12,Math.PI,0);
+        ctx.fill();
+        ctx.strokeStyle="rgba(0,0,0,.15)";
+        ctx.lineWidth=2;
+        for(let k=-2;k<=2;k++){
+            ctx.beginPath();
+            ctx.moveTo(x,y);
+            ctx.lineTo(x+k*5,y-11);
+            ctx.stroke();
+        }
+
+    }
+
+}
 
 
 function drawBackground(){
 
-    const ground =
+    const map=MAPS[currentMap]||MAPS.forest;
+
+
+    const ground=
         ctx.createLinearGradient(
-            0,
-            0,
-            0,
-            canvas.height
+            0,0,0,canvas.height
         );
 
 
-    ground.addColorStop(
-        0,
-        "#2f6b3f"
-    );
+    ground.addColorStop(0,map.ground[0]);
 
-    ground.addColorStop(
-        1,
-        "#1d4a30"
-    );
+    ground.addColorStop(1,map.ground[1]);
 
 
     ctx.fillStyle=ground;
 
-    ctx.fillRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-    );
+    ctx.fillRect(0,0,canvas.width,canvas.height);
 
 
-    /*
-       Lưới cuộn giúp thấy nhân vật
-       đang di chuyển trong thế giới.
-    */
+    /* dải nước / khu vực đặc biệt */
 
-    ctx.strokeStyle=
-        "rgba(255,255,255,.05)";
+    if(map.band){
+
+        const y0=map.band.y0-cameraY;
+
+        const y1=map.band.y1-cameraY;
+
+        const wg=ctx.createLinearGradient(0,y0,0,y1);
+
+        wg.addColorStop(0,map.band.color[0]);
+
+        wg.addColorStop(1,map.band.color[1]);
+
+        ctx.fillStyle=wg;
+
+        ctx.fillRect(0,y0,canvas.width,y1-y0);
+
+
+        ctx.fillStyle="rgba(255,255,255,.35)";
+
+        for(let i=0;i<5;i++){
+
+            const wy=y0+20+i*((y1-y0)/5);
+
+            ctx.beginPath();
+            ctx.ellipse(
+                (i*260-cameraX*.5)%canvas.width,
+                wy,
+                60,5,0,0,TAU
+            );
+            ctx.fill();
+
+        }
+
+    }
+
+
+    /* lưới cuộn */
+
+    ctx.strokeStyle=map.grid;
 
     ctx.lineWidth=2;
 
@@ -4044,18 +6241,11 @@ function drawBackground(){
 
     const offX=-(cameraX%grid);
 
-    for(
-        let x=offX;
-        x<canvas.width;
-        x+=grid
-    ){
+    for(let x=offX;x<canvas.width;x+=grid){
 
         ctx.beginPath();
-
         ctx.moveTo(x,0);
-
         ctx.lineTo(x,canvas.height);
-
         ctx.stroke();
 
     }
@@ -4063,18 +6253,11 @@ function drawBackground(){
 
     const offY=-(cameraY%grid);
 
-    for(
-        let y=offY;
-        y<canvas.height;
-        y+=grid
-    ){
+    for(let y=offY;y<canvas.height;y+=grid){
 
         ctx.beginPath();
-
         ctx.moveTo(0,y);
-
         ctx.lineTo(canvas.width,y);
-
         ctx.stroke();
 
     }
@@ -4082,63 +6265,21 @@ function drawBackground(){
 
     for(const t of TREES){
 
-        const x=
-            t.x-cameraX;
+        const x=t.x-cameraX;
 
-        const y=
-            t.y-cameraY;
+        const y=t.y-cameraY;
 
 
         if(
-            x<-90||
-            x>canvas.width+90||
-            y<-90||
-            y>canvas.height+90
+            x<-110||
+            x>canvas.width+110||
+            y<-110||
+            y>canvas.height+110
         )
             continue;
 
 
-        ctx.fillStyle=
-            "rgba(0,0,0,.22)";
-
-        ctx.beginPath();
-
-        ctx.ellipse(
-            x,
-            y+26,
-            24,
-            9,
-            0,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
-
-
-        ctx.fillStyle="#704527";
-
-        ctx.fillRect(
-            x-6,
-            y-4,
-            12,
-            32
-        );
-
-
-        ctx.fillStyle="#28784a";
-
-        ctx.beginPath();
-
-        ctx.arc(
-            x,
-            y-6,
-            t.r,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
+        drawDecor(t,x,y);
 
     }
 
@@ -4291,151 +6432,129 @@ function drawPlayer(){
 
 
     ctx.fillStyle=
-        "rgba(0,0,0,.3)";
-
+        "rgba(0,0,0,.28)";
 
     ctx.beginPath();
-
-    ctx.ellipse(
-        x,
-        y+43,
-        35,
-        12,
-        0,
-        0,
-        Math.PI*2
-    );
-
+    ctx.ellipse(x,y+44,34,12,0,0,TAU);
     ctx.fill();
 
+
+    drawCharacter(ctx,x,y,1,currentSkin);
+
+
+    drawWeapon(x,y);
+
+}
+
+
+function drawWeapon(x,y){
 
     /*
-       Nhân vật robot mèo xanh
-       thay cho việc nhúng hình ảnh
-       có bản quyền trực tiếp.
+       Súng luôn cầm trên tay, chĩa về
+       phía quái vật đang active.
     */
 
-    ctx.fillStyle="#1e9fd0";
-
-    ctx.beginPath();
-
-    ctx.arc(
-        x,
-        y,
-        37,
-        0,
-        Math.PI*2
-    );
-
-    ctx.fill();
-
-
-    ctx.fillStyle="#f5fbff";
-
-    ctx.beginPath();
-
-    ctx.arc(
-        x,
-        y-2,
-        29,
-        0,
-        Math.PI*2
-    );
-
-    ctx.fill();
-
-
-    ctx.fillStyle="#1e9fd0";
-
-    ctx.beginPath();
-
-    ctx.arc(
-        x-24,
-        y-29,
-        12,
-        0,
-        Math.PI*2
-    );
-
-    ctx.arc(
-        x+24,
-        y-29,
-        12,
-        0,
-        Math.PI*2
-    );
-
-    ctx.fill();
-
-
-    ctx.fillStyle="#111";
-
-    ctx.beginPath();
-
-    ctx.arc(
-        x-9,
-        y-8,
-        4,
-        0,
-        Math.PI*2
-    );
-
-    ctx.arc(
-        x+9,
-        y-8,
-        4,
-        0,
-        Math.PI*2
-    );
-
-    ctx.fill();
-
-
-    ctx.fillStyle="#e63232";
-
-    ctx.beginPath();
-
-    ctx.arc(
-        x,
-        y+1,
-        5,
-        0,
-        Math.PI*2
-    );
-
-    ctx.fill();
+    let ang=0;
 
 
     if(
-        player.hammerTimer>0
+        activeMonster &&
+        activeMonster.alive
     ){
+
+        ang=Math.atan2(
+            activeMonster.y-player.y,
+            activeMonster.x-player.x
+        );
+
+    }
+
+
+    const recoil=
+        player.gunRecoil>0
+        ? player.gunRecoil*46
+        : 0;
+
+
+    ctx.save();
+
+    ctx.translate(
+        x+Math.cos(ang)*12,
+        y+Math.sin(ang)*12+4
+    );
+
+    ctx.rotate(ang);
+
+    ctx.translate(-recoil,0);
+
+
+    ctx.fillStyle="#3b4252";
+    ctx.fillRect(0,-4,26,8);
+
+    ctx.fillStyle="#59616f";
+    ctx.fillRect(2,3,8,12);
+
+    ctx.fillStyle="#2b303b";
+    ctx.fillRect(22,-3,7,6);
+
+
+    if(player.gunRecoil>.07){
+
+        ctx.fillStyle="#ffe066";
+        ctx.beginPath();
+        ctx.moveTo(29,-7);
+        ctx.lineTo(46,0);
+        ctx.lineTo(29,7);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle="#fff6c0";
+        ctx.beginPath();
+        ctx.arc(30,0,5,0,TAU);
+        ctx.fill();
+
+    }
+
+
+    ctx.restore();
+
+
+    /*
+       Búa vung mượt khi đập trứng.
+    */
+
+    if(player.hammerTimer>0){
+
+        const p=
+            1-player.hammerTimer/.35;
+
+        const ease=
+            p<.5
+            ? 2*p*p
+            : 1-Math.pow(-2*p+2,2)/2;
+
+        const swing=
+            -2.1+ease*2.9;
+
 
         ctx.save();
 
-        ctx.translate(
-            x+35,
-            y-5
-        );
+        ctx.translate(x+6,y-6);
 
-        ctx.rotate(-.8);
+        ctx.rotate(swing);
+
 
         ctx.fillStyle="#8b562c";
+        ctx.fillRect(-4,-4,9,52);
 
-        ctx.fillRect(
-            0,
-            0,
-            8,
-            58
-        );
 
-        ctx.fillStyle="#aaa";
+        ctx.fillStyle="#c3ccd4";
+        ctx.fillRect(-17,-18,34,22);
 
-        ctx.fillRect(
-            -10,
-            -8,
-            28,
-            18
-        );
+        ctx.strokeStyle="#7d878f";
+        ctx.lineWidth=2;
+        ctx.strokeRect(-17,-18,34,22);
+
 
         ctx.restore();
 
@@ -4544,6 +6663,26 @@ function drawMonsters(){
         );
 
         ctx.fill();
+
+
+        if(monster.hitFlash>0){
+
+            ctx.fillStyle=
+                "rgba(255,255,255,"+
+                (monster.hitFlash/.14*.6)+
+                ")";
+
+            ctx.beginPath();
+            ctx.arc(
+                x,
+                y,
+                monster.size+3,
+                0,
+                TAU
+            );
+            ctx.fill();
+
+        }
 
 
         drawMonsterWord(
@@ -4663,6 +6802,8 @@ function draw(){
 
     drawPlayer();
 
+    drawBullets();
+
 }
 
 
@@ -4689,6 +6830,8 @@ function gameLoop(now){
     updatePlayer(dt);
 
     updateMonsters(dt);
+
+    updateBullets(dt);
 
     updateCamera();
 
@@ -4722,8 +6865,10 @@ function gameLoop(now){
 createEggs();
 
 
+bootLoading();
+
+
 </script>
 
 </body>
 </html>
-
