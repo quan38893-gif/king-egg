@@ -1,9 +1,8 @@
-# king-egg[egg-monster-word-hunter.html](https://github.com/user-attachments/files/32794286/egg-monster-word-hunter.html)
 <!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,viewport-fit=cover">
 
 <title>Egg Monster - Word Hunter</title>
 
@@ -27,7 +26,77 @@ canvas{
     display:block;
     width:100%;
     height:100%;
+    touch-action:none;
 }
+
+/* =====================================================
+   TOUCH CONTROLS (MOBILE)
+===================================================== */
+
+#touchControls{
+    position:fixed;
+    inset:0;
+    z-index:25;
+    display:none;
+    pointer-events:none;
+}
+
+#joystickBase{
+    position:absolute;
+    left:24px;
+    bottom:24px;
+    width:132px;
+    height:132px;
+    border-radius:50%;
+    background:rgba(0,0,0,.32);
+    border:2px solid rgba(94,232,255,.55);
+    pointer-events:auto;
+    touch-action:none;
+}
+
+#joystickKnob{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:56px;
+    height:56px;
+    margin:-28px 0 0 -28px;
+    border-radius:50%;
+    background:rgba(94,232,255,.75);
+    border:2px solid rgba(255,255,255,.8);
+    box-shadow:0 0 14px rgba(0,200,255,.6);
+}
+
+#attackButton{
+    position:absolute;
+    right:26px;
+    bottom:34px;
+    width:104px;
+    height:104px;
+    border-radius:50%;
+    background:rgba(255,76,121,.82);
+    border:3px solid rgba(255,255,255,.85);
+    color:white;
+    font-weight:bold;
+    font-size:15px;
+    line-height:1.1;
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    pointer-events:auto;
+    touch-action:none;
+    user-select:none;
+}
+
+#attackButton:active{
+    transform:scale(.94);
+}
+
+body.touch #controls{
+    display:none !important;
+}
+
 
 /* =====================================================
    LOGIN
@@ -796,6 +865,24 @@ canvas{
         letter-spacing:5px;
     }
 
+    #wordPanel{
+        top:64px;
+        bottom:auto;
+        width:94%;
+        padding:10px;
+    }
+
+    #ui{
+        top:8px;
+        left:8px;
+        right:8px;
+    }
+
+    .uiBox{
+        padding:6px 10px;
+        font-size:12px;
+    }
+
 }
 
 </style>
@@ -1168,6 +1255,20 @@ canvas{
     SPACE = Đập trứng
 
 </div>
+
+
+<div id="touchControls">
+
+    <div id="joystickBase">
+        <div id="joystickKnob"></div>
+    </div>
+
+    <div id="attackButton">
+        ĐẬP<br>TRỨNG
+    </div>
+
+</div>
+
 
 
 <!-- =====================================================
@@ -2019,6 +2120,10 @@ const MAX_HEALTH = 10;
 
 const keys = {};
 
+let touchDX = 0;
+
+let touchDY = 0;
+
 
 const LEVEL_SPEED = {
 
@@ -2661,6 +2766,14 @@ function(){
         "controls"
     ).style.display="block";
 
+
+    if(isTouchDevice){
+
+        touchControls.style.display="block";
+
+    }
+
+
     updateUI();
 
     lastTime =
@@ -2711,6 +2824,206 @@ e=>{
 
 
 /* =====================================================
+   TOUCH CONTROLS (MOBILE)
+===================================================== */
+
+const isTouchDevice =
+    ("ontouchstart" in window) ||
+    navigator.maxTouchPoints>0;
+
+
+if(isTouchDevice){
+
+    document.body.classList.add("touch");
+
+}
+
+
+const joystickBase =
+    document.getElementById("joystickBase");
+
+const joystickKnob =
+    document.getElementById("joystickKnob");
+
+const attackButton =
+    document.getElementById("attackButton");
+
+const touchControls =
+    document.getElementById("touchControls");
+
+
+let joystickTouchId = null;
+
+const JOYSTICK_RADIUS = 48;
+
+
+function joystickUpdate(touch){
+
+    const rect =
+        joystickBase.getBoundingClientRect();
+
+    const cx =
+        rect.left+rect.width/2;
+
+    const cy =
+        rect.top+rect.height/2;
+
+    let dx =
+        touch.clientX-cx;
+
+    let dy =
+        touch.clientY-cy;
+
+    const dist =
+        Math.sqrt(dx*dx+dy*dy);
+
+
+    if(dist>JOYSTICK_RADIUS){
+
+        dx = dx/dist*JOYSTICK_RADIUS;
+        dy = dy/dist*JOYSTICK_RADIUS;
+
+    }
+
+
+    joystickKnob.style.transform =
+        "translate("+dx+"px,"+dy+"px)";
+
+
+    touchDX = dx/JOYSTICK_RADIUS;
+    touchDY = dy/JOYSTICK_RADIUS;
+
+}
+
+
+function joystickReset(){
+
+    joystickTouchId=null;
+
+    joystickKnob.style.transform =
+        "translate(0px,0px)";
+
+    touchDX=0;
+    touchDY=0;
+
+}
+
+
+joystickBase.addEventListener(
+"touchstart",
+e=>{
+
+    e.preventDefault();
+
+    const touch =
+        e.changedTouches[0];
+
+    joystickTouchId =
+        touch.identifier;
+
+    joystickUpdate(touch);
+
+},
+{passive:false}
+);
+
+
+joystickBase.addEventListener(
+"touchmove",
+e=>{
+
+    e.preventDefault();
+
+    for(
+        const touch of e.changedTouches
+    ){
+
+        if(
+            touch.identifier===
+            joystickTouchId
+        ){
+
+            joystickUpdate(touch);
+
+        }
+
+    }
+
+},
+{passive:false}
+);
+
+
+joystickBase.addEventListener(
+"touchend",
+e=>{
+
+    e.preventDefault();
+    joystickReset();
+
+},
+{passive:false}
+);
+
+
+joystickBase.addEventListener(
+"touchcancel",
+e=>{
+
+    e.preventDefault();
+    joystickReset();
+
+},
+{passive:false}
+);
+
+
+attackButton.addEventListener(
+"touchstart",
+e=>{
+
+    e.preventDefault();
+
+    if(gameRunning){
+
+        attackEgg();
+
+    }
+
+},
+{passive:false}
+);
+
+
+/*
+   Ngăn trang cuộn / phóng to khi
+   chạm vào vùng game trên điện thoại.
+*/
+
+document.addEventListener(
+"touchmove",
+e=>{
+
+    if(
+        e.target===canvas
+    ){
+
+        e.preventDefault();
+
+    }
+
+},
+{passive:false}
+);
+
+
+document.addEventListener(
+"gesturestart",
+e=>e.preventDefault()
+);
+
+
+/* =====================================================
    PLAYER
 ===================================================== */
 
@@ -2727,6 +3040,11 @@ function updatePlayer(dt){
     if(keys.a)dx--;
 
     if(keys.d)dx++;
+
+
+    dx+=touchDX;
+
+    dy+=touchDY;
 
 
     if(dx||dy){
@@ -3531,6 +3849,12 @@ function endGame(){
     document.getElementById(
         "controls"
     ).style.display="none";
+
+
+    touchControls.style.display="none";
+
+    joystickReset();
+
 
     document.getElementById(
         "gameoverScore"
@@ -4402,3 +4726,4 @@ createEggs();
 
 </body>
 </html>
+
